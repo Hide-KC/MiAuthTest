@@ -1,0 +1,9 @@
+/build
+google-services.json
+/**/Example*Test.kt
+/src/main/res/values/key.xml
+/**/*.svg
+/**/*.png
+/**/*.jpg
+/**/*.webp
+/release
