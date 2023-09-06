@@ -7,4 +7,10 @@
   <color name="teal_700">#FF018786</color>
   <color name="black">#FF000000</color>
   <color name="white">#FFFFFFFF</color>
+
+  <color name="misskey_icon">#94cc3e</color>
+  <color name="misskey_web_primary">#fb4e4e</color>
+  <color name="misskey_web_secondary">#282C37</color>
+
+  <color name="mastodon_icon">#6364FF</color>
 </resources>

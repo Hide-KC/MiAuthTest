@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".view.AuthActivity">
+
+  <ImageView
+    android:id="@+id/auth_background_image"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:scaleType="centerCrop"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <androidx.cardview.widget.CardView
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="36dp"
+    android:layout_marginEnd="36dp"
+    android:backgroundTint="#66000000"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/auth_form_container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/server_icon"
+        style="@style/ServerIconDefStyle"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.PILL"
+        tools:background="@mipmap/ic_launcher_round" />
+
+      <RadioGroup
+        android:id="@+id/target_software_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/server_icon">
+
+        <RadioButton
+          android:id="@+id/misskey_server"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="30dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginEnd="15dp"
+          android:layout_weight="1"
+          android:background="@drawable/misskey_btn_selector"
+          android:button="@null"
+          android:checked="true"
+          android:drawableTop="@drawable/ic_mi_edit"
+          android:paddingTop="20dp" />
+
+        <RadioButton
+          android:id="@+id/mastodon_server"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginEnd="30dp"
+          android:layout_weight="1"
+          android:background="@drawable/mastodon_btn_selector"
+          android:button="@null"
+          android:checked="false"
+          android:drawableTop="@drawable/ic_mastodon"
+          android:paddingTop="20dp" />
+
+      </RadioGroup>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/target_host_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/target_software_container"
+        app:startIconContentDescription="scheme"
+        app:startIconDrawable="@drawable/ic_https">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/target_host"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          tools:hint="text hint" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/start_auth_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/start_auth"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/target_host_container" />
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="6dp"
+        android:background="#00000000"
+        android:text="@android:string/cancel"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/start_auth_btn" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
